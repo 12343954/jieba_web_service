@@ -45,7 +45,7 @@ sudo pip install MySQL-python
 
 1. 在vscode终端窗口，输入
 
-	$ git remote add origin https://github.com/12343954/jieba_web_service
+	$ git remote add origin https://github.com/12343954/jieba_web_service  
 	$ git pull origin master
 
 2. vscode git 窗口 右上角 “推送到”，弹出窗口，填入账号密码，确认，即可添加到github
