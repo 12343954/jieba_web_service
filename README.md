@@ -1,6 +1,6 @@
 
 
-###安装jieba分词###
+### 安装jieba分词 ###
 
 1. 代码对 Python 2/3 均兼容
 
@@ -18,30 +18,30 @@
 
 
 ### 安装Mysql ###
-- 下载dmg安装
+1. 下载dmg安装
 
-- 安装	MySQL-python
+2. 安装	MySQL-python
 
-- 出现：EnvironmentError: mysql_config not found
-- 解决：
-- PATH="/usr/local/mysql/bin:${PATH}"
-- export PATH
-- export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
-- export VERSIONER_PYTHON_PREFER_64_BIT=yes
-- export VERSIONER_PYTHON_PREFER_32_BIT=no
+出现：EnvironmentError: mysql_config not found  
+解决：  
+PATH="/usr/local/mysql/bin:${PATH}"  
+export PATH  
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/  
+export VERSIONER_PYTHON_PREFER_64_BIT=yes  
+export VERSIONER_PYTHON_PREFER_32_BIT=no  
 
-- 最后
-- sudo pip install MySQL-python
+3. 最后
+sudo pip install MySQL-python  
 
 
-###推荐安装：PyMySQL + DBUtils
+### 推荐安装：PyMySQL + DBUtils ###
 
 #http://blog.csdn.net/cyh1111/article/details/53337895
 
 	$ sudo pip install PyMySQL
 	$ sudo pip install DBUtils
 
-vscode push to github
+### vscode push to github ###
 
 1. 在vscode终端窗口，输入
 
