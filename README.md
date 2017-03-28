@@ -1,6 +1,7 @@
 
 
 安装jieba分词
+
 1，代码对 Python 2/3 均兼容
 
 全自动安装：easy_install jieba 或者 pip install jieba / pip3 install jieba
@@ -9,7 +10,8 @@
 
 
 安装flask，制作python的RESTful风格 webservice
-1，sodu pip install flask
+
+1，$ sodu pip install flask
 
 2，useage in python:
 	from Flask import request
@@ -39,9 +41,13 @@ sudo pip install MySQL-python
 	$ sudo pip install DBUtils
 
 vscode push to github
+
 1,在vscode终端窗口，输入
-git remote add origin https://github.com/12343954/jieba_web_service |\
+
+git remote add origin https://github.com/12343954/jieba_web_service
+
 git pull origin master
+
 2,vscode git 窗口 右上角 “推送到”，弹出窗口，填入账号密码，确认，即可添加到github
 
 
