@@ -1,10 +1,11 @@
 import sys
-import jieba
-import jieba.posseg
-import jieba.analyse
-from flask import Flask,jsonify
-from python_mysql_helper import getPTConnection, PTConnectionPool;
 
+import jieba
+import jieba.analyse
+import jieba.posseg
+from flask import Flask, jsonify
+
+from python_mysql_helper import PTConnectionPool, getPTConnection
 
 app = Flask(__name__)
 HOST,PORT='0.0.0.0',8888
@@ -43,5 +44,3 @@ def part_of_speech(str_words):
 
 if __name__ == "__main__":
     app.run(debug=True,host=HOST,port=PORT)
-
-
