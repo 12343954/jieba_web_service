@@ -1,6 +1,6 @@
 
 
-###安装jieba分词
+###安装jieba分词###
 
 1. 代码对 Python 2/3 均兼容
 
@@ -9,7 +9,7 @@
 2. testing：
 
 
-###安装flask，制作python的RESTful风格 webservice
+### 安装flask，制作python的RESTful风格 webservice ###
 
 1. $ sodu pip install flask
 
@@ -17,7 +17,7 @@
 	from Flask import request
 
 
-###安装Mysql
+### 安装Mysql ###
 - 下载dmg安装
 
 - 安装	MySQL-python
