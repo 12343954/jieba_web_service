@@ -7,11 +7,11 @@
 '''
 
 #TEST数据库信息
-DB_TEST_HOST="127.0.0.1";
-DB_TEST_PORT=3306;
-DB_TEST_DBNAME="NLP";
-DB_TEST_USER="root";
-DB_TEST_PASSWORD="asdf";
+DB_TEST_HOST        =   "127.0.0.1";
+DB_TEST_PORT        =   3306;
+DB_TEST_DBNAME      =   "NLP";
+DB_TEST_USER        =   "root";
+DB_TEST_PASSWORD    =   "asdf";
 
 
 #数据库连接编码
