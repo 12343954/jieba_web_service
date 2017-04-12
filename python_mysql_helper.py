@@ -22,9 +22,9 @@ class PTConnectionPool(object):
         
         # Enforce UTF-8 for the connection.
         # http://stackoverflow.com/questions/26532722/how-to-encode-utf8mb4-in-python
-        # self.cursor.execute('SET NAMES utf8mb4')
-        # self.cursor.execute("SET CHARACTER SET utf8mb4")
-        # self.cursor.execute("SET character_set_connection=utf8mb4")
+        self.cursor.execute('SET NAMES utf8mb4')
+        self.cursor.execute("SET CHARACTER SET utf8mb4")
+        self.cursor.execute("SET character_set_connection=utf8mb4")
 
         print "#--------------- PT数据库创建con和cursor ---------------#";
         return self;

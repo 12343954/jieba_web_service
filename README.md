@@ -19,6 +19,7 @@
 
 ### 安装Mysql ###
 1. 下载dmg安装
+	export PATH=${PATH}:/usr/local/mysql/bin
 
 2. 安装	MySQL-python
 
