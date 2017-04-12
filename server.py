@@ -1,39 +1,57 @@
 #coding:utf-8
 
 import sys
+import os
 
 import jieba
 import jieba.analyse
 import jieba.posseg
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 from python_mysql_helper import PTConnectionPool, getPTConnection
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-app = Flask(__name__)
+# setting up template directory
+ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), './')
+app = Flask(__name__, template_folder = ASSETS_DIR, static_folder = ASSETS_DIR)
 app.config.DEBUG=True
+
 # app.json_encoder = 'NonASCIIJsonEncoder'
 HOST,PORT='0.0.0.0',8888
 
-#default port : http://localhost:5000
+#default port : http://localhost:8888
 @app.route('/')
-def index():
-    return 'hello jieba services!'
+def root():
+    return app.send_static_file("Doc.html")
 
-#
+#精准模式分词
 @app.route('/api/cut/<string:str_words>')
 def cut(str_words):
     result = jieba.cut(str_words,HMM=False)
     return ' / '.join(result)
 
-#
+#搜索模式分词
 @app.route('/api/cut_for_search/<string:str_words>')
 def cut_for_search(str_words):
     result = jieba.cut_for_search(str_words)
     return ' / '.join(result)
 
+#添加生词
+@app.route('/api/suggest_freq/<string:str_words>')
+def suggest_freq(str_words):
+    if(len(str_words) == 0):
+        return jsonify(return_code=-1,
+                        msg='str_words is empty',
+                        data=None)
+    
+    new_Words = tuple(set(filter(None, str_words.split(','))))
+    return jsonify(return_code=1,
+                    msg='success',
+                    data=jieba.suggest_freq(new_Words, True))
+
+@app.route('/api/pos/<string:str_words>')
 @app.route('/api/part_of_speech/<string:str_words>')
 def part_of_speech(str_words):
     words = jieba.posseg.cut(str_words)
