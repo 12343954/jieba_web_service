@@ -56,6 +56,7 @@ sudo pip install MySQL-python
 
 	git fetch --all
 	git reset --hard origin/master
+	
 
 
 
