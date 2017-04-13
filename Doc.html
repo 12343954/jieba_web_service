@@ -19,7 +19,27 @@
         </li>
         <li>
             <h3>/api/suggest_freq/&lt;string:str_words&gt;</h3>
-            <p>添加生词，str_words 要用<strong>英文逗号（,）</strong>拼接</p>
+            <p>添加生词，str_words 生词要用<strong>英文逗号（,）</strong>拼接</p>
+            <pre>
+print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False)))
+#「/台/中/」/正确/应该/不会/被/切开
+print(jieba.suggest_freq('台中', True))
+#69
+print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False)))
+#「/台中/」/正确/应该/不会/被/切开
+            </pre>
+        </li>
+        <li>
+            <h3>/api/suggest_split/&lt;string:str_words&gt;</h3>
+            <p>建议拆分，str_words 要拆分的词组用<strong>英文逗号（,）</strong>拼接</p>
+            <pre>
+print('/'.join(jieba.cut('如果放到post中将出错。', HMM=False)))
+#如果/放到/post/中将/出错/。
+print(jieba.suggest_freq(('中', '将'), True))
+#494
+print('/'.join(jieba.cut('如果放到post中将出错。', HMM=False)))
+#如果/放到/post/中/将/出错/。
+            </pre>
         </li>
         <li>
             <h3>/api/pos/&lt;string:str_words&gt;<br>

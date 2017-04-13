@@ -42,11 +42,29 @@ def cut_for_search(str_words):
 @app.route('/api/suggest_freq/<string:str_words>')
 def suggest_freq(str_words):
     if(len(str_words) == 0):
+        return jsonify(return_code = 0,
+                        msg = 'str_words is empty',
+                        data = False)
+
+    words = list(set(filter(None, str_words.split(','))))   #虑重
+
+    for word in words:
+        jieba.suggest_freq(word, True)
+
+    return jsonify(return_code = 1,
+                    msg = 'success',
+                    data = True)
+
+#建议拆分
+@app.route('/api/suggest_split/<string:str_words>')
+def suggest_split(str_words):
+    if(len(str_words) == 0):
         return jsonify(return_code=-1,
                         msg='str_words is empty',
                         data=None)
     
-    new_Words = tuple(set(filter(None, str_words.split(','))))
+    new_Words = tuple(set(filter(None, str_words.split(','))))  #虑重
+
     return jsonify(return_code=1,
                     msg='success',
                     data=jieba.suggest_freq(new_Words, True))
