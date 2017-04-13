@@ -52,7 +52,10 @@ sudo pip install MySQL-python
 2. vscode git 窗口 右上角 “推送到”，弹出窗口，填入账号密码，确认，即可添加到github
 
 
+### git 放弃本地代码，强制更新远端最新代码到本地
 
+	git fetch --all
+	git reset --hard origin/master
 
 
 
