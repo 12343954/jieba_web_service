@@ -4,7 +4,7 @@
 
 1. compatible with Python 2/3
 
-auto-install：easy_install jieba 或者 pip install jieba / pip3 install jieba
+auto-install：easy_install jieba or pip install jieba / pip3 install jieba
 
 2. testing：
 
