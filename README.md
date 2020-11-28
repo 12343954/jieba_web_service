@@ -1,6 +1,6 @@
 
 
-### install jieba split words ###
+### Jieba word segmentation packaging, and testing & training ###
 
 1. compatible with Python 2/3
 
